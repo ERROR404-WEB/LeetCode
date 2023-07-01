@@ -9,8 +9,7 @@ public:
             if(s[i]==d)
             {
                 string s1=ss.erase(i,1);
-                if(maxx=="") maxx=s1;
-                else maxx=max(maxx,s1);
+                maxx=max(maxx,s1);
                 ss=s;
             }
         }
