@@ -8,8 +8,8 @@ public:
         {
             if(s[i]==d)
             {
-                string s1=ss.erase(i,1);
-                maxx=max(maxx,s1);
+                ss.erase(i,1);
+                maxx=max(maxx,ss);
                 ss=s;
             }
         }
