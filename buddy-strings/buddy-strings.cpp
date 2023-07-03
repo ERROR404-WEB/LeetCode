@@ -1,16 +1,16 @@
 class Solution {
 public:
     bool buddyStrings(string a, string b) {
+
         if(a.size()!=b.size()) return false;
-        int c=0,flag=0;
-        unordered_map<char,int>m;
+
+        int c=0;
+        unordered_set<char>s(a.begin(),a.end());
 
         char a1,b1,a2,b2;
+
         for(int i=0;i<a.size();i++)
         {
-            m[a[i]]++;
-            if(m[a[i]]>1) flag=1;
-
             if(a[i]!=b[i])
             {
                 c++;
@@ -28,9 +28,8 @@ public:
             }
 
         }
-        if(!c and flag) return true;
-
-        if(a1==b2 and a2==b1) return true;
+        if(!c and s.size()!=a.size() ) return true;
+        else if(c==2 and a1==b2 and a2==b1) return true;
 
         return false;
     }
